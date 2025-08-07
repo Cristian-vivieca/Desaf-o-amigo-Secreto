@@ -1,4 +1,3 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
 let listaDeAmigos = [];
 
 // Agrega un amigo a la lista
@@ -6,11 +5,21 @@ function agregarAmigo() {
     const input = document.getElementById('amigo');
     const nombre = input.value.trim();
 
+    // Validar que el nombre no esté vacío
     if (nombre === '') {
-        alert("Por favor, escribe un nombre válido.");
+        alert("Por favor, escribe un nombre.");
         return;
     }
 
+    // Validar que el nombre contenga solo letras y espacios
+    const soloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+    if (!soloLetras.test(nombre)) {
+        alert("Nombre no válido. Solo se permiten letras.");
+        input.value = '';
+        return;
+    }
+
+    // Validar que el nombre no esté repetido
     if (listaDeAmigos.includes(nombre)) {
         alert("Este nombre ya fue agregado.");
         input.value = '';
@@ -58,6 +67,8 @@ function sortearAmigo() {
     // Actualizar la lista visual
     mostrarListaAmigos();
 }
+
+// Reinicia el juego
 function reiniciarJuego() {
     listaDeAmigos = [];
 
