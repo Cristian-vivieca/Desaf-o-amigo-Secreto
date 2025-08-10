@@ -1,4 +1,5 @@
 <h1>El Amigo Secreto</h1>
+Estado del proyecto : En mejoras
 
  🎁 Desafío: El Amigo Secreto
 
